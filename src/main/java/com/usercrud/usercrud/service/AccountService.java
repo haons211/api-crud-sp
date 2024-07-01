@@ -10,7 +10,7 @@ public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
 
-    public void addNewAccount(String username,String password) {
+    public void addNewAccount(String username,String password) {/**/
         Account account = new Account(username,password);
          accountRepository.save(account);
     }
