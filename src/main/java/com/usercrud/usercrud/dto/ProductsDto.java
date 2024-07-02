@@ -8,10 +8,11 @@ import java.sql.Date;
 
 @Data
 public class ProductsDto {
-    @NotEmpty(message="Thieu ten san pham")
-    private String name;
+
     @NotEmpty(message="Thieu phan o ta")
     private String description;
+    @NotEmpty(message="Thieu ten san pham")
+    private String name;
     @NotEmpty(message="Thieu gia san pham")
     private Double price;
     @NotEmpty(message="Thieu so luong")

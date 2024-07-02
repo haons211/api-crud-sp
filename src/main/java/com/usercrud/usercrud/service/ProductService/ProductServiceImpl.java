@@ -3,22 +3,25 @@ package com.usercrud.usercrud.service.ProductService;
 import com.usercrud.usercrud.dto.ProductsDto;
 import com.usercrud.usercrud.model.Products;
 import com.usercrud.usercrud.repository.ProductRepository;
-import org.modelmapper.ModelMapper;
+import com.usercrud.usercrud.mapper.ProductMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
-    private final ModelMapper mapper;
     private ProductRepository productRepository;
+    @Autowired
+    private ProductMapper productMapper;
+
 
     @Override
     public List<ProductsDto> getAllProducts() {
-        List<Products> products = productRepository.findAll();
-        mapper.
-        return List.of();
+        return productMapper.ProductsToProductsDto(productRepository.findAll());
     }
 
     @Override
@@ -28,7 +31,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Products saveProduct(ProductsDto productDto) {
-        return null;
+        return productRepository.save(productMapper.ProductsDtoToProducts(productDto));
     }
 
     @Override

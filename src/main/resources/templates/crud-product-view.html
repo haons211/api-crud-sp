@@ -22,11 +22,11 @@
 <body>
 
 <h2>Product List</h2>
-
+<a href="create-product.html">Here to add</a>
 <table id="productTable">
     <thead>
     <tr>
-        <th>Product ID</th>
+
         <th>Name</th>
         <th>Description</th>
         <th>Price</th>
@@ -52,7 +52,7 @@
                 data.forEach(product => {
                     const row = document.createElement("tr");
                     row.innerHTML = `
-                        <td>${product.product_id}</td>
+
                         <td>${product.name}</td>
                         <td>${product.description}</td>
                         <td>${product.price}</td>
@@ -65,9 +65,7 @@
                 console.error('There was a problem with the fetch operation:', error);
             });
     });
-    document.addEventListener("Click",function(){
-        window.location.href=""
-    })
+
 </script>
 
 </body>
