@@ -1,0 +1,13 @@
+name: first WorkFlow
+on: [push]
+jobs:
+      hello_world_job:
+         runs-on: ubuntu-latest  
+      
+         steps:
+           - name: Checkout repository
+             uses:  actions/checkout@v2
+             
+           - name: show script to CLI
+             run: echo "Hello World"
+           
